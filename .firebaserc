@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-kanaban-wsb": {
+      "hosting": {
+        "ng-kanban": [
+          "ng-kanaban-wsb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-kanaban-wsb"
+  }
+}

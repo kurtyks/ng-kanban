@@ -1,0 +1,30 @@
+<div class="min-h-screen flex flex-col">
+  <header class="flex justify-between items-center p-4 bg-gray-800 text-white">
+    <div class="flex items-center">
+      <h1 class="text-lg font-bold">Kanaban czy cośtam 🔥 łogiń</h1>
+    </div>
+    <div class="flex">
+      <button class="mx-2 px-4 py-2 bg-blue-400 hover:bg-blue-600 text-white rounded" (click)="createTask()">
+        Dodaj zadanie
+      </button>
+      <button *ngIf="userProfile == null; else userMenu "
+        class=" mx-2 px-4 py-2 bg-white text-black flex align-center rounded" (click)="googleSignIn()">
+        <span class="mx-4">Zaloguj się</span> <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAACMUlEQVR4nGNgGNbgfycD7/9Cxkn/Y5ke/fdm/PXfkeH/fyeG//99GX/+j2O8/7+Isf9/PQMXeYYXMPb892L8/d+W4T9e7Mv4638RYxvxBqcxsP5PZDpP0GBbJGzH8P9/NtMW4ixIZjpHkuG2DP//ezP+/l/PYkdcsKBrdmD4/z+B6cr/EtbU/5kMsv/rGcT+lzEl/k9hugiWAxlezWJD2PArDGz/K5jfoxjuxvD3fylTJE49FUyRRBkOVnyQNfz/Qfb//6ey/v/vCg3XMqYIojQTZwH7MrAFILyRDWT4AaoZDrbgAPtNuAVgzGKGTZ1k2aX/hLB90/ov2HzwGcWC/Qw85FqgXHni3wBYcIB6QWRat/MX3kg+uUf2f+sWi3PYLMAGwrtn3UK2ILhz7n0sPmAN+3OQ4/+8HXr/fdcH/Pdb7/9/2g6DKEKG182siJcpv4Dig/xJLRMwLbjCwNayxeKzz/qA/zAcvsHrLz5L+hbFRGtWHf6HbLhu7YHf3YuKubFqmLLNoBPZAhD2X+//v3Kz7bU52wyT1u5UElu6X01kxg79xJatltcCN/j9j53agub61m68Xm7aYnUG3RIfAjh5buF/uYqz/2N7p50iFKQMq/4zMDdutj5NigW+6wP+N6wIOZQ2M42VgVgwaatRR/wGj9+EDE/a6PZr2naDFgZywJT9WjyTthr2V2yyfRC/weNX0Hrf/8Hrff8lb3T7WbPZ+t6kbUa9q47JcJJl+JABAGALQHVa59MsAAAAAElFTkSuQmCC"></button>
+
+      <ng-template #userMenu>
+        <button class="mx-2 px-4 py-2 bg-white text-black flex align-center rounded" [matMenuTriggerFor]="logout">
+          <span class="mx-4 ">{{ userProfile.displayName }}</span>
+          <img class="w-6 ratio-1/1 rounded-full" [src]="userProfile.photoURL"></button>
+      </ng-template>
+      <mat-menu #logout="matMenu">
+        <button mat-menu-item (click)="logOut()">Wyloguj</button>
+      </mat-menu>
+    </div>
+  </header>
+
+  <div class="grow px-6 py-6">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
