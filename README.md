@@ -1,4 +1,7 @@
 Projekt zaliczeniowy 15332
+Do uruchomienia projektu lokalnie, niezbędny jest plik env, który zawiera dane aplikacji firebase.
+Plik nie jest dołączony w repo 
+
 
 Zastosowane technilogie: 
   angular
