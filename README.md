@@ -1,3 +1,29 @@
+Projekt zaliczeniowy 15332
+
+Zastosowane technilogie: 
+  angular
+  angular-cli
+  rxjs
+  tailwindcss
+  angular-material 
+  firebase: Auth, FireStore 
+  
+Koncepcja funkcjonalności:
+  podgląd statusu realizacji poszczególnych zadań 
+  zmiana statusu zadań poprzez DragAndDrop
+  Dodawanie nowych zadań
+  Logowanie za pomocą google 
+  
+KNOWN BUGS: 
+  Da się zalogować za pomocą providera google, ale nie daje to, żadnego rezultatu poza nazwą i zdjęciem (niekompletny firestore)
+  Po przeniesieniu elementu nie aktualizujemy pola currentStatus tego elementu, mimo, że powinien się zmienić 
+  
+ TO DO: 
+  fix main bugs 
+  create responsive menu
+  
+
+
 # NgKanban
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
