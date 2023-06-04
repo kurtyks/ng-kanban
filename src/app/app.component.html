@@ -1,10 +1,10 @@
 <div class="min-h-screen flex flex-col">
-  <header class="flex justify-between items-center p-4 bg-gray-800 text-white">
+  <header class="flex justify-between items-center p-4 bg-gray-800 text-white w-screen">
     <div class="flex items-center">
-      <h1 class="text-lg font-bold">Kanaban czy cośtam 🔥 łogiń</h1>
+      <h2 class="text-lg font-bold">Moja tablica</h2>
     </div>
     <div class="flex">
-      <button class="mx-2 px-4 py-2 bg-blue-400 hover:bg-blue-600 text-white rounded" (click)="createTask()">
+      <button class="hidden md:flex mx-2 px-4 py-2 bg-blue-400 hover:bg-blue-600 text-white rounded" (click)="createTask()">
         Dodaj zadanie
       </button>
       <button *ngIf="userProfile == null; else userMenu "
@@ -26,5 +26,9 @@
   <div class="grow px-6 py-6">
     <router-outlet></router-outlet>
   </div>
-
+  <div class="flex md:hidden fixed bottom-0 w-screen">
+    <button class="px-4 py-4 bg-blue-400 hover:bg-blue-600 text-white rounded opacity-90 text-lg w-full" (click)="createTask()">
+      Dodaj zadanie
+    </button>
+  </div>
 </div>

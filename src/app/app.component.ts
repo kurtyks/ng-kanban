@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'ng-kanban';
   loggedIn: boolean = false;
   userProfile: any = null;
-
+  isMobileMenuOpen: boolean = false;
   createTask() {
     const dialogRef = this.dialog.open(CreateTaskComponent);
   }

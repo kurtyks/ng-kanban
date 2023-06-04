@@ -1,18 +1,19 @@
-<mat-dialog-content class="wider-dialog-content">
+<mat-dialog-content class="w-full mx-2 my-2 px-4 py-4 flex sm:wider-dialog-content">
+    <h3>Tworzenie nowego zadania</h3>
     <form #newTask="ngForm" (ngSubmit)="createTask(newTask)">
         <div class="mb-4">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Temat</label>
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2"></label>
             <input ngModel required type="text" id="name" name="taskName" placeholder="Temat"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
         </div>
         <div class="mb-4">
-            <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Opis</label>
+            <label for="content" class="block text-gray-700 text-sm font-bold mb-2"></label>
             <textarea ngModel id="content" name="taskContent" placeholder="Wprowadź opis"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md resize-none h-32 focus:outline-none focus:border-blue-500"></textarea>
         </div>
     </form>
 </mat-dialog-content>
-<mat-dialog-actions class="w-100">
+<mat-dialog-actions class="w-screen">
     <button class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md mr-2" (click)="closePopup()">Odrzuć</button>
     <button class="px-4 py-2 bg-blue-500 text-white rounded-md mr-2 disabled:bg-gray-300" (click)="createTask(newTask)"
         [disabled]="!newTask.valid">Utwórz</button>
